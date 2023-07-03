@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="bootstrap.min.css">
   <style>
     /* Global Styles */
     body {
@@ -38,7 +37,68 @@
     .content {
       margin: 20px;
     }
+    
+    /* Hide Content by Default */
+    .tab-content {
+      display: none;
+    }
+    
+    /* Show Content when Tab 1 is Active */
+    .tab-content.active {
+      display: block;
+    }
+    
+    /* Photo and Paragraph Container Styles */
+    .photo-container {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .photo-container.pc {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .photo-container.pc .photo {
+      width: 45%;
+    }
+    
+    /* Photo Styles */
+    .photo {
+      margin-bottom: 20px;
+    }
+    
+    .photo img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
   </style>
+  <script>
+    // JavaScript to Toggle Content Visibility
+    window.addEventListener('DOMContentLoaded', function() {
+      var tabs = document.querySelectorAll('nav a');
+      var tabContents = document.querySelectorAll('.tab-content');
+
+      function toggleTabContent(event) {
+        var target = event.target.getAttribute('href');
+        
+        // Hide all tab contents
+        tabContents.forEach(function(content) {
+          content.classList.remove('active');
+        });
+        
+        // Show the selected tab content
+        document.querySelector(target).classList.add('active');
+      }
+
+      // Attach event listeners to the tabs
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', toggleTabContent);
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -47,50 +107,66 @@
   </header>
   
   <nav>
-    <a href="#tab1">Tab 1</a>
-    <a href="#tab2">Tab 2</a>
-    <a href="#tab3">Tab 3</a>
-    <a href="#tab4">Tab 4</a>
+    <a href="#tab1">About Us</a>
+    <a href="#tab2">Games</a>
+    <a href="#tab3">Socials</a>
+    <a href="#tab4">Contact Us</a>
   </nav>
   
   <div class="content">
-    <div id="tab1" class="tab-content">
-      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="image1.jpg" class="d-block w-100" alt="Image 1">
-            <div class="carousel-caption">
-              <h3>Image 1</h3>
-              <p>Text on Image 1</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="image2.jpg" class="d-block w-100" alt="Image 2">
-            <div class="carousel-caption">
-              <h3>Image 2</h3>
-              <p>Text on Image 2</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="image3.jpg" class="d-block w-100" alt="Image 3">
-            <div class="carousel-caption">
-              <h3>Image 3</h3>
-              <p>Text on Image 3</p>
-            </div>
-          </div>
+    <div id="tab1" class="tab-content active">
+      <h3>About Us</h3>
+      <div class="photo-container">
+        <div class="photo">
+          <img src="photo1.jpg" alt="Photo 1">
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+        <p>My name is Comet, and I am a dedicated game developer with a deep-rooted passion for video games. Ever since I can remember, I've been captivated by the immersive worlds and captivating experiences that games offer. It's this passion that drives me to create exceptional gaming experiences for players of all ages and backgrounds.</p>
+        <div class="photo pc">
+          <img src="photo2.jpg" alt="Photo 2">
+        </div>
+        <h3>What have I done recently?</h3>
+        <div class="photo">
+          <img src="photo3.jpg" alt="Photo 3">
+        </div>
+        <p>I have recently introduced my latest creation, ZenSpin, into the gaming world. ZenSpin is a captivating game that effortlessly combines relaxation and addictive fun. With its soothing music, serene visuals, and intuitive gameplay mechanics, players are drawn into a world of tranquility and mindfulness. While its simplicity makes it accessible to all, the game's subtle challenges and irresistible allure keep players engaged and coming back for more. ZenSpin is just the beginning of my game development journey, and I eagerly look forward to creating more innovative and enjoyable experiences in the near future.</p>
+        <div class="photo pc">
+          <img src="photo4.jpg" alt="Photo 4">
+        </div>
+        <h3>What is my goal?</h3>
+        <div class="photo">
+          <img src="photo5.jpg" alt="Photo 5">
+        </div>
+        <p>As a game developer, my primary goal is to create games that leave a lasting impact on players. I believe that gaming is an art form that has the power to inspire, entertain, and even challenge the way we think. Through meticulous attention to detail, thoughtful design, and seamless execution, I strive to ensure that every aspect of my games is finely tuned to provide an unforgettable experience. To achieve this, I constantly push myself to stay up-to-date with the latest advancements in technology and game design. I study the works of industry pioneers, analyze player feedback, and collaborate with talented professionals to refine and improve my craft. I embrace the iterative nature of game development, understanding that each project presents an opportunity for growth and innovation.</p>
+        <div class="photo pc">
+          <img src="photo6.jpg" alt="Photo 6">
+        </div>
+        <h3>What drives me?</h3>
+        <div class="photo">
+          <img src="photo7.jpg" alt="Photo 7">
+        </div>
+        <p>I am driven by the joy of creating games that bring people together. Games have a unique ability to connect individuals across cultures and boundaries, fostering friendships and shared experiences. By crafting games that are inclusive, accessible, and enjoyable, I hope to contribute to the gaming community and bring delight to players worldwide.</p>
+        <div class="photo pc">
+          <img src="photo8.jpg" alt="Photo 8">
+        </div>
+        <h3>This is just the beginning...</h3>
+        <div class="photo">
+          <img src="photo9.jpg" alt="Photo 9">
+        </div>
+        <p>My journey as a game developer is a never-ending pursuit of perfection. I will continue to challenge myself, learn from each project, and evolve as a creator. With each game I create, I aspire to set new standards of excellence and push the boundaries of what's possible in the world of gaming. Together with players, I believe we can create magical moments that will be cherished and remembered for years to come.</p>
       </div>
     </div>
+    <div id="tab2" class="tab-content">
+      <h3>Games</h3>
+      <p>This is the content of Tab 2.</p>
+    </div>
+    <div id="tab3" class="tab-content">
+      <h3>Socials</h3>
+      <p>This is the content of Tab 3.</p>
+    </div>
+    <div id="tab4" class="tab-content">
+      <h3>Contact Us</h3>
+      <p>This is the content of Tab 4.</p>
+    </div>
   </div>
-  
-  <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
