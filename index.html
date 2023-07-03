@@ -1,72 +1,96 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        /* Global Styles */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Navigation Styles */
-        nav {
-            background-color: #444;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-        }
-
-            nav a {
-                color: #fff;
-                text-decoration: none;
-                padding: 10px;
-            }
-
-        /* Content Styles */
-        .content {
-            margin: 20px;
-        }
-
-        /* Media Queries */
-        @media only screen and (max-width: 600px) {
-            /* Styles for screens up to 600px */
-            nav {
-                flex-direction: column;
-                align-items: center;
-            }
-
-                nav a {
-                    margin-bottom: 10px;
-                }
-        }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Header Styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    /* Navigation Styles */
+    nav {
+      background-color: #444;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px;
+    }
+    
+    /* Content Styles */
+    .content {
+      margin: 20px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Title</h1>
-        <h2>Subheading</h2>
-    </header>
-
-    <nav>
-        <a href="#tab1">Tab 1</a>
-        <a href="#tab2">Tab 2</a>
-        <a href="#tab3">Tab 3</a>
-        <a href="#tab4">Tab 4</a>
-    </nav>
-
-    <div class="content">
-        <!-- Content of the tabs goes here -->
+  <header>
+    <h1>Title</h1>
+    <h2>Subheading</h2>
+  </header>
+  
+  <nav>
+    <a href="#tab1">Tab 1</a>
+    <a href="#tab2">Tab 2</a>
+    <a href="#tab3">Tab 3</a>
+    <a href="#tab4">Tab 4</a>
+  </nav>
+  
+  <div class="content">
+    <div id="tab1" class="tab-content">
+      <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="image1.jpg" class="d-block w-100" alt="Image 1">
+            <div class="carousel-caption">
+              <h3>Image 1</h3>
+              <p>Text on Image 1</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="image2.jpg" class="d-block w-100" alt="Image 2">
+            <div class="carousel-caption">
+              <h3>Image 2</h3>
+              <p>Text on Image 2</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="image3.jpg" class="d-block w-100" alt="Image 3">
+            <div class="carousel-caption">
+              <h3>Image 3</h3>
+              <p>Text on Image 3</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
+  </div>
+  
+  <script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
